@@ -256,3 +256,313 @@ h1{
 
 
 /* ********************************************* Fin css header 1 et 2 section ********************************************* */
+
+/* ********************************************* Début css home section ********************************************* */
+
+#section1{
+    padding: 1rem 9%;
+    background: url(./image_home/b3.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn {
+    margin-top: .5rem;
+    display: inline-block;
+    padding: 0.8rem 3rem;
+    background: #bac34e;
+    color: red;
+    font-size: .5rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #222;
+}
+
+.slide-container .nom{
+    color: #331EE1;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+   
+}
+
+.slide-container .nom p{
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    margin-left: 1rem;
+    margin-right: 30rem;
+    font-weight: bold;
+    letter-spacing: .3rem;
+    text-shadow: 2px 10px 2px rgba(2, 0, 0, 0.5);
+   
+}
+
+.home .slide-container .slide {
+    display: flex;
+    align-items: center;
+    flex-flow: nowrap;
+    justify-content: space-around;
+    gap: 1.5rem;
+    display: none;
+    padding: 1.5rem 1rem;
+    margin-bottom: 4rem;
+}
+
+.home .slide-container .slide.active {
+    display: flex;
+}
+  
+.home .slide-container .content {
+    display: flex;
+    align-items: start;
+    flex-flow: column;
+    padding: 1rem;
+    flex-basis: 50%;
+}
+
+
+
+.home .slide-container .content span {
+    color: #666;
+    font-size: 1.5rem;
+    animation: para 1s linear;
+}
+
+@keyframes para {
+    100% {
+      opacity: 0;
+      transform: translateX(-10rem);
+    }
+}
+
+
+.home .slide-container .content h1 {
+    font-size: 2rem;
+    color: #331EE1;
+    padding: 2rem 0;
+    animation: fadeLeft 0.9s ease-in 0.4s backwards;
+}
+
+@keyframes fadeLeft {
+    100% {
+      opacity: 0;
+      transform: translateX(-50rem);
+    }
+}
+
+.home .slide-container .image{
+    flex-basis: 48%;
+    max-width: 80vw;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.home .slide-container .image img{
+    max-width: 100%;
+    height: auto;
+     /* animation: fadeUp 1s linear;Ajouter une animation de fondu vers le haut de 1 seconde avec un délai initial de 0.4 seconde */
+}
+
+@keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: scale(-1.2);
+    }
+}
+
+.home #next-slide,
+.home #prev-slide {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4rem;
+  width: 4rem;
+  line-height: 4rem;
+  box-shadow: 0 0.5rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background: #fff;
+  font-size: 1.5rem;
+  color: #222;
+  cursor: pointer;
+}
+
+
+.home #next-slide:hover,
+.home #prev-slide:hover {
+  background: #bac34e;
+  color: #fff;
+}
+
+.home #prev-slide {
+    left: 2rem;
+  }
+  
+  .home #next-slide {
+    right: 2rem;
+}
+
+.bar{
+    position: fixed;
+    width: 10vw;
+    height: 20vh;
+    right: 2rem;
+    top: 20rem;
+    /*display: inline-block;*/
+    transition: top 0.3s;
+    /*z-index: 2000;*/
+}
+
+.aside{
+    position: absolute;
+    right: 0;
+  
+}
+
+.bar .nav-list{
+    margin-top: 1rem;
+    height: 100%;
+    position: relative;
+}
+
+.bar .nav-list li{
+    position: relative;
+    margin: 0.7rem;
+    list-style: none;
+    right: -8.2rem;
+    border-bottom: 1px solid transparent;
+    padding-top: .5rem;
+    border: none;
+}
+
+
+.bar .nav-list li a{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    transition: all 4s ease;
+    z-index: 12;
+    padding: .5rem;
+    
+}
+
+.bar .nav-list li i{
+    font-size: 2rem;
+    border-radius: 5px;
+    color: green;
+    padding: .5rem;
+    background: #eee;
+    margin-left: .5rem;
+    transform: transition;
+    margin-right: 1rem;
+}
+
+.bar .nav-list li:hover{
+    transition: .1s ease;
+}
+
+.bar .nav-list li a .link_name{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
+    white-space: nowrap;
+    pointer-events: auto;
+    transition: all .4s ease;
+    pointer-events: none;
+    opacity: 0;
+    
+}
+
+.bar .nav-list li a:hover {
+    background-color: #555;
+    transition: 2s ease;
+}
+
+.bar .nav-list li a:hover i{
+    transform: rotate(360deg);
+    transition: 1s ease;
+}
+
+/* ************* medias queries section home */
+@media only screen and (max-width: 850px) {
+    .home{
+      padding-top: 10rem;
+    }
+    .home .slide-container .slide{
+      flex-flow: column-reverse;
+    }
+  
+    .home .slide-container .image{
+      width: 100vw;
+      padding: 2rem 1rem;
+    }
+  
+    .home .slide-container .image img{
+      width: 500px;
+    }
+  
+    section {
+      padding: 3rem 2rem;
+    }
+  
+    .home #next-slide,
+    .home #prev-slide {
+        transform: translateY(0);
+        top: 91%;
+        
+    }
+  
+    .home #prev-slide {
+      left: 1rem;
+      right: 8rem;
+    }
+
+    .products .product-container{
+        grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
+        
+    }
+
+    .slide-container .nom p{
+        margin-right: 0rem;
+
+    }
+
+}
+
+/* Pour les écrans de petite taille (par exemple, téléphones) */
+@media only screen and (max-width: 450px){
+    .home #next-slide,
+    .home #prev-slide {
+    height: 3rem;
+    width: 3rem;
+    line-height: 3rem;
+    }
+
+    
+    .home #next-slide,
+    .home #prev-slide {
+      transform: translateY(0);
+      top: 93%;
+    }
+
+  
+}
+
+
+/* ================== Fin medias queries home section ================== */
+
+
+/* ********************************************* Fin css home section ********************************************* */
+
