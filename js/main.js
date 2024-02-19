@@ -129,6 +129,7 @@ closeBtn.addEventListener("click", () => {
    
 
 // Fonction pour masquer la barre de navigation
+
 function hideNavBar() {
   navBar.classList.remove("show");
   navBar.style.transition = "1s ease";
@@ -162,3 +163,5 @@ if(scrollButton){
         })*/
     })
 }
+
+// fin
