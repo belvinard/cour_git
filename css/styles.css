@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*,
+::after,
+::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+body,html{
+    scroll-behavior: smooth;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+}
+nav{
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    padding: 10px;
+    z-index: 2000;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+h1{
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-style: normal; 
+}
+
+/* css por ramener la flèche vers le haut */
+
+
+.scroll-top{
+    position: fixed;
+    height: 60px;
+    width: 60px;
+    background: #1ECBE1;
+    bottom: 10px;
+    right: 10px;
+    display: none;
+    place-items: center;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.fa-arrow-up{
+    color: #FFF7F8;
+    font-size: 2rem;
+}
+
+
+/* ********************************************* Début css header 1 et 2 section ********************************************* */
+.navbar1{
+    position: relative;
+    background-color:#eee;
+    width: 100%;
+    padding: .5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar1 .logo{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 20%;
+    padding: .5rem;
+}
+
+
+.navbar1 .logo img{
+    width: 17%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    
+}
+
+.navbar1 .logo .text-logo{
+    font-style: normal; /* Annuler l'italique */
+    font-weight: bold; /* Rendre le texte gras */
+    color: #222;
+    font-size: 1.3rem;
+    font-family: normal;
+    margin-left: .5rem;
+}
+
+
+.navbar1 .adresse{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 70%;
+    
+}
+
+.navbar1 .adresse .element{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 1rem;
+    margin-right: 2rem;
+}
+
+.navbar1 .adresse .element i{
+    margin-right: .5rem;
+    color: #1ECBE1;
+}
+
+.navbar1 .adresse .element .email{
+    cursor: pointer;
+}
+
+.navbar1 .adresse .element .email:hover{
+    color: #331EE1;
+}
+
+
+#mainNav a.active{
+    background: #666;
+    color: #FFF7F8;
+    transition: color 0.3s ease-in-out, background 0.6s ease-in-out;
+    border-radius: 2rem;
+}
+
+#mainNav a:not(.active) {
+    color: #333; 
+    background: transparent; 
+}
+
+#mainNav {
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    background: #FFF7F8;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: .5rem 0;
+    
+}
+
+#mainNav a{
+
+    padding: 10px 20px;
+    font-size: 1.5rem;
+
+}
+
+#menuBtn{
+    width: 50px;
+    height: 50px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#menuBtn img{
+    width: 20px;
+}
+
+#closeBtn{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#closeBtn img{
+    width: 35px;
+}
+
+#mainNav.show{
+    transform: translateY(0);
+    transition: 1s ease;
+
+}
+
+/* medias queries header */
+
+@media only screen and (max-width: 768px){
+    #menuBtn{
+        display: flex;
+    }
+
+    #closeBtn{
+        display: block;
+        position: relative;
+        margin-bottom: 10rem;
+        margin-right: 12rem;
+        margin-top: 1rem;
+    }
+
+
+    #mainNav{
+        position: fixed;
+        transform: translateY(-120%);
+        flex-direction: column;
+        right: 0;
+        top: 0;
+        width: 250px;
+        z-index: 200;
+        height: auto;
+        padding-bottom: 50rem;
+        transition: .3s ease;
+        background: #eee;
+        
+    }
+
+    #mainNav a{
+        margin-bottom: 2rem;
+    }
+
+}
+@media only screen and (max-width: 860px){
+
+    .navbar1{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar1 .adresse{
+        flex-direction: column;
+        margin-bottom: .5rem;
+    }
+
+    .navbar1 .logo{
+        flex-direction: row;
+        margin-bottom: .5rem;
+    }
+    .navbar1 .adresse .element{
+        margin-bottom: .5rem;
+    }
+
+}
+
+
+/* ********************************************* Fin css header 1 et 2 section ********************************************* */
